@@ -1,8 +1,12 @@
-var express = require('express');
-var app = express();
-var db = require('./db');
+const express = require('express');
 
-var UserController = require('./user/UserController');
+let app = express();
+require('./db');
+let AuthController = require('./auth/AuthController');
+let UserController = require('./user/UserController');
+
+app.use('/api/auth', AuthController);
+
 app.use('/users', UserController);
 
 module.exports = app;

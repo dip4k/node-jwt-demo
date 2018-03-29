@@ -1,2 +1,5 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://yourMongoDBURIGoesHere');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/nodeJwt', () => {
+  console.log('mongodb connection successful');
+});
